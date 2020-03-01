@@ -11,6 +11,8 @@ CREATE TABLE products (
     PRIMARY KEY(item_id)
 );
 
+ALTER TABLE products CHANGE stock_quatity stock_quantity INT NULL; --fixed spelling of quantity from original table
+
 INSERT INTO products(product_name, department_name, price, stock_quatity)
 VALUE ("Gental face wash-unbranded", "personal care", 7.99, 15);
 
