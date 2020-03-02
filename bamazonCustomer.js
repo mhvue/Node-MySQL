@@ -124,10 +124,20 @@ function totalCost() {
     var query = "SELECT price FROM products WHERE item_id=" + chosenProd;
     connection.query(query, function(err,res) {
         var total = res[0].price*chosenQuan;
+        var formatTotal= number_format(total, 2);
         if (err)throw err;
-        console.log("Your total is " + total + ".");
+        console.log("Your total is " + formatTotal + ".");
         startOver();
     })
+};
+
+//obtained function number_format from https://thisinterestsme.com/javascript-round-decimal-places/
+function number_format(val, decimals){
+    //Parse the value as a float value
+    val = parseFloat(val);
+    //Format the value w/ the specified number
+    //of decimal places and return it.
+    return val.toFixed(decimals);
 };
 
 function startOver() {
