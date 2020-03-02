@@ -28,7 +28,6 @@ connection.connect(function(err) {
             "\nProduct: " + res[i].product_name +
             "\nPrice: " + res[i].price); 
         }
-        // connection.end();
         askUser();
       });
   }
@@ -42,7 +41,7 @@ function askUser() {
     {
         name: "buyWhat",
         type: "input",
-        message:"Which items would you like to purchase? Please use ID number."
+        message:"Which items would you like to purchase? Please use ID number. OR type EXIT to leave."
     },
     {//The second message should ask how many units of the product they would like to buy.
         name: "buyHowMany",
@@ -54,9 +53,15 @@ function askUser() {
             } else {
                 return false;
             }
-        }
+     },
     }]).then(function (answer) {
             chosenProd = answer.buyWhat;
+
+            if(chosenProd == "EXIT") {
+                console.log(chosenProd);
+                connection.end();
+            }
+            else{
             var query = "SELECT product_name FROM products WHERE item_id ="+ chosenProd;
             connection.query(query, function(err, res){
                 if (err) throw err;
@@ -73,16 +78,16 @@ function askUser() {
                 else if (chosenQuan <= res[0].stock_quantity) {
                     newStock= res[0].stock_quantity - chosenQuan;
                      console.log(newStock);
-                    // console.log("here we go!")
                     updateProd();
                 }
                 else{
                     console.log("Sorry we do not have enough. Please pick something else")
-                    //call displayFunct  again.
+                    startOver();
                 }
+            
             });
-                // connection.end()
-            });
+        }      
+         });
     };
 
 //this means updating the SQL database to reflect the remaining quantity.
@@ -98,7 +103,6 @@ function updateProd() {
         ], 
         function(err, res) {
             if (err) throw err;
-           
         }
     )
 
@@ -109,13 +113,27 @@ function updateProd() {
 function totalCost() {
     var query = "SELECT price FROM products WHERE item_id=" + chosenProd;
     connection.query(query, function(err,res) {
-        var total = res[0].price + chosenQuan;
+        var total = res[0].price*chosenQuan;
         if (err)throw err;
-        console.log("Your total is " + total + "." )
-    
-
-    
-        //give option to start over by calling function startOver or  exit
+        console.log("Your total is " + total + ".");
+        startOver();
     })
-    connection.end()
+}
+
+function startOver() {
+    inquirer.prompt({
+        name: "start",
+        type: "list",
+        message: "Would you like to look at our items again?",
+        choices:["Yes", "No"]
+    }).then(function(answer){
+        if(answer.start === "Yes") {
+            console.log(answer.start)
+            displayItems();
+        }
+        else{
+            console.log("Thank you. Good-Bye!")
+            connection.end();
+        }
+    })
 }
