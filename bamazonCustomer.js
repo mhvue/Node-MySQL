@@ -1,6 +1,10 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
 
+var chosenQuan;
+var chosenProd;
+var newStock;
+
 var connection = mysql.createConnection({
     host: "127.0.0.1",
     port: 3307,
@@ -31,7 +35,6 @@ connection.connect(function(err) {
 
   //two inquirers in one fuction. 
   //consider giving an option of EXIT 
-  //consider displaying the items as a Raw list? 
 
 function askUser() {
   //The first should ask them the ID of the product they would like to buy.
@@ -53,34 +56,49 @@ function askUser() {
             }
         }
     }]).then(function (answer) {
-            var query = "SELECT product_name FROM products WHERE item_id ="+ answer.buyWhat;
-            var chosenItem;
+            chosenProd = answer.buyWhat;
+            var query = "SELECT product_name FROM products WHERE item_id ="+ chosenProd;
             connection.query(query, function(err, res){
                 if (err) throw err;
                 console.log(res[0].product_name);
-                 
             });
-
-            var chosenQuan= parseInt(answer.buyHowMany);
-            var queryCheck= "SELECT stock_quantity FROM products WHERE item_id=" + answer.buyWhat;
+            chosenQuan= parseInt(answer.buyHowMany);
+            var queryCheck= "SELECT stock_quantity FROM products WHERE item_id=" + chosenProd;
 
             connection.query(queryCheck, function(err, res){
                 // console.log(res[0].stock_quantity)
                 if (err) {
                     throw err
-                } 
+                }
                 else if (chosenQuan <= res[0].stock_quantity) {
-                    //call function to update
-                    //call start function
+                    newStock= res[0].stock_quantity - chosenQuan;
+                     console.log(newStock);
+                    // console.log("okay. got you")
+                    updateProd();
+                    //this means updating the SQL database to reflect the remaining quantity.
                 }
                 else{
-                    console.log("we do not have enough.")
-                    //call start func again.
+                    console.log("Sorry we do not have enough. Please pick something else")
+                    //call displayFunct  again.
                 }
-                
             });
-           
-                connection.end()
+                // connection.end()
             });
     };
 
+function updateProd() {
+    connection.query("UPDATE products SET ? WHERE ?",
+        [
+            {
+                stock_quantity: newStock,
+            },
+            {
+                item_id: chosenProd,
+            }
+        ], 
+        function(err, res) {
+            if (err) throw err;
+            connection.end()
+        }
+    )
+}
