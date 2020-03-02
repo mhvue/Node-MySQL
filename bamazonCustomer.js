@@ -109,8 +109,13 @@ function updateProd() {
 function totalCost() {
     var query = "SELECT price FROM products WHERE item_id=" + chosenProd;
     connection.query(query, function(err,res) {
-        if (err) throw err;
-        console.log(res);
+        var total = res[0].price + chosenQuan;
+        if (err)throw err;
+        console.log("Your total is " + total + "." )
+    
+
+    
+        //give option to start over by calling function startOver or  exit
     })
     connection.end()
 }
