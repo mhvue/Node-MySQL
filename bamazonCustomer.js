@@ -73,9 +73,8 @@ function askUser() {
                 else if (chosenQuan <= res[0].stock_quantity) {
                     newStock= res[0].stock_quantity - chosenQuan;
                      console.log(newStock);
-                    // console.log("okay. got you")
+                    // console.log("here we go!")
                     updateProd();
-                    //this means updating the SQL database to reflect the remaining quantity.
                 }
                 else{
                     console.log("Sorry we do not have enough. Please pick something else")
@@ -86,6 +85,7 @@ function askUser() {
             });
     };
 
+//this means updating the SQL database to reflect the remaining quantity.
 function updateProd() {
     connection.query("UPDATE products SET ? WHERE ?",
         [
@@ -98,7 +98,19 @@ function updateProd() {
         ], 
         function(err, res) {
             if (err) throw err;
-            connection.end()
+           
         }
     )
+
+    totalCost();
+}
+
+// Once the update goes through, show the customer the total cost of their purchase.
+function totalCost() {
+    var query = "SELECT price FROM products WHERE item_id=" + chosenProd;
+    connection.query(query, function(err,res) {
+        if (err) throw err;
+        console.log(res);
+    })
+    connection.end()
 }
