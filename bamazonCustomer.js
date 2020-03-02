@@ -30,10 +30,7 @@ connection.connect(function(err) {
         }
         toBuy();
       });
-  }
-
-  //two inquirers in one fuction. 
-  //consider giving an option of EXIT 
+  };
 
 function askUser() {
     inquirer.prompt(
@@ -97,7 +94,7 @@ function toBuy() {
                     console.log("Sorry we do not have enough.")
                     startOver();
                 }
-                });
+            });
         })     
     };
 
