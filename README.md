@@ -10,9 +10,9 @@ This like an Amazon-like application. Users will get the option to pick what ite
 5. We see "connected as id" message. This confirms we are connected to MySQL. The first question displayed is to Buy or Exit. 
 <p align="center"><img src= "images/start_app.png"></p>
 
-6. If User chooses Exit, the application ends. <p align="center"><br><img src= "images/ExitFirst.png"></p>
+6. If Exit selected, the application ends. <p align="center"><br><img src= "images/ExitFirst.png"></p>
 
-7. If User chooses Buy, the application will display items to purchase. There are a total of 10 items. (This image is only listing 6.) Information shown per item is the Item ID, Product, and Price.<p align="center"><br><img src= "images/Buy.png"></p>
+7. If Buy selected, the application will display items to purchase. There are a total of 10 items. (This image is only listing 6.) Information shown per item is the Item ID, Product, and Price.<p align="center"><br><img src= "images/Buy.png"></p>
 
 8. As instructed, input ID number to purchase. Once done so, the application will then ask to input quantity.<p align="center">
 <br><img src= "images/Id.quantity.png"></p>
