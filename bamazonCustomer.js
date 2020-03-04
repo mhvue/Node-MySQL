@@ -91,7 +91,7 @@ function toBuy() {
                     updateProd();
                 }
                 else{
-                    console.log("\nSorry we do not have enough.")
+                    console.log("\nSorry we do not have enough." + "\n-------------")
                     startOver();
                 }
             });
@@ -141,7 +141,7 @@ function startOver() {
     inquirer.prompt({
         name: "start",
         type: "list",
-        message: "\nWould you like to look at our items again?",
+        message: "Would you like to look at our items again?",
         choices:["Yes", "No"]
     }).then(function(answer){
         if(answer.start === "Yes") {

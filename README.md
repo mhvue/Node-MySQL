@@ -7,22 +7,20 @@ This like a Amazon-like application. Users will get the option to pick what item
 3. Always start with "node" and input bamazonCustomer.js.
 4. Press Enter.
 
-5. We see "connected as id" message. This confirms we are connected to MySQL. The first question displayed is to Buy or Exit.<p align="center">
+5. We see "connected as id" message. This confirms we are connected to MySQL. The first question displayed is to Buy or Exit. 
+<p align="center">
 <br>
 <img src= "images/start_app.png">
 </p>
 
-6.If User chooses Exit, the application ends. <p align="center">
+6. If User chooses Exit, the application ends. <p align="center">
 <br>
 <img src= "images/ExitFirst.png">
 </p>
 
-7. If user chooses Buy, the application display items to buy. There are a total of 10 items on this application, but this image is only listing 6.<p align="center">
-<br>
-<img src= "images/Buy.png">
-</p>
+7. If user chooses Buy, the application display items to buy. There are a total of 10 items on this application, but this image is only listing 6.<p align="center"><br><img src= "images/Buy.png"></p>
 
-8. <p align="center">User needs to input ID number of item as instructed. Once done so, the application will then ask to input quantity.
+8. User needs to input ID number of item as instructed. Once done so, the application will then ask to input quantity.<p align="center">
 <br>
 <img src= "images/Id.quantity.png">
 </p>
@@ -33,12 +31,12 @@ This like a Amazon-like application. Users will get the option to pick what item
 </p>
 
 ### Item low in stock
-<p align="center"><b>If item is low in stock and not enough per User request, a message will inform of this. It'll ask if User would like to look at list of items again.</b>
+<p align="center"><b>If item is not enough quantity per User request, a message will inform of this. It'll ask if User would like to look at list of items again.</b>
 <br>
 <img src= "images/notEnough.png">
 </p>
 
-<p align="center"><b>If user picks Yes, the list of items will show again and start over, asking User to pick item by ID number.</b>
+<p align="center"><b>If user picks Yes, the list of items will show again and application start over.</b>
 <br>
 <img src= "images/notEnough_listAgain.png">
 </p>
