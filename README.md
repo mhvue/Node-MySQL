@@ -21,20 +21,20 @@ This like an Amazon-like application. Users will get the option to pick what ite
 <br><img src= "images/itemInfo_price2.png"></p>
 
 ### Item Low in Stock
-<p align="center">If an item is not enough to fulfill User request, a message will inform of this.<br><br><img src= "images/notEnough.png"></p>
+If an item is not enough to fulfill User request, a message will inform of this.<p align="center"><br><img src= "images/notEnough.png"></p>
 
-<p align="center">It'll then ask if User would like to look at list of items again.<br><img src= "images/notEnough_lookAgain.png"></p>
+It'll then ask if User would like to look at list of items again.<p align="center"><br><img src= "images/notEnough_lookAgain.png"></p>
 
-<p align="center">If Yes, the list of items will show, thus, the application starts over.<br><img src= "images/notEnough_listAgain.png"></p>
+If Yes, the list of items will show, thus, the application starts over<p align="center">.<br><img src= "images/notEnough_listAgain.png"></p>
 
-<p align="center">If No, the applications ends.<br><img src= "images/notEnough_No.png"></p>
+If No, the applications ends.<p align="center"><br><img src= "images/notEnough_No.png"></p>
 
 ### Continue shopping?
-<p align="center">After displaying the Total, the application will ask if User would like to look at items again.<br><img src= "images/afterTotal.png"></p>
+After displaying the Total, the application will ask if User would like to look at items again.<p align="center"><br><img src= "images/afterTotal.png"></p>
 
-<p align="center">By picking Yes, the application starts over<br><img src= "images/listAgain.png"></p>
+By picking Yes, the application starts over<p align="center"><br><img src= "images/listAgain.png"></p>
 
-<p align="center">By picking No, the application ends.<br><img src= "images/ExitLast.png"></p>
+By picking No, the application ends.<p align="center"><br><img src= "images/ExitLast.png"></p>
 
 
 ## Technologies Used
