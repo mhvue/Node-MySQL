@@ -7,7 +7,7 @@ This like a Amazon-like application. Users will get the option to pick what item
 3. Always start with "node" and input bamazonCustomer.js.
 4. Press Enter.
 
-5. <p align="center">We see "connected as id" message. This confirms we are connect to MySQL. The first question ask to Buy or Exit.
+5. <p align="center">We see "connected as id" message. This confirms we are connected to MySQL. The first question displayed is to Buy or Exit.
 <br>
 <img src= "images/start_app.png">
 </p>
@@ -17,7 +17,7 @@ This like a Amazon-like application. Users will get the option to pick what item
 <img src= "images/ExitFirst.png">
 </p>
 
-7. <p align="center">If user choses Buy, the application display items to buy. There are a total of 10 items on this application, but this image is only listing 6.
+7. <p align="center">If user chooses Buy, the application display items to buy. There are a total of 10 items on this application, but this image is only listing 6.
 <br>
 <img src= "images/Buy.png">
 </p>
@@ -33,33 +33,33 @@ This like a Amazon-like application. Users will get the option to pick what item
 </p>
 
 ### Item low in stock
-<p align="center"><b>"If item is low in stock and not enough per User request, then a message will inform of this. It'll ask if User would like to look at list of items again."</b>
+<p align="center"><b>If item is low in stock and not enough per User request, a message will inform of this. It'll ask if User would like to look at list of items again.</b>
 <br>
 <img src= "images/notEnough.png">
 </p>
 
-<p align="center"><b>"If user picks Yes, the list of items will show again and start over, asking User to pick item by ID number."</b>
+<p align="center"><b>If user picks Yes, the list of items will show again and start over, asking User to pick item by ID number.</b>
 <br>
 <img src= "images/notEnough_listAgain.png">
 </p>
 
-<p align="center"><b>"If user picks No, the applications ends."</b>
+<p align="center"><b>If user picks No, the applications ends.</b>
 <br>
 <img src= "images/notEnough_No.png">
 </p>
 
 ### Continue shopping?
-<p align="center"><b>"After total, the application will ask if User would like to look at items again."</b>
+<p align="center"><b>After total, the application will ask if User would like to look at items again.</b>
 <br>
 <img src= "images/afterTotal.png">
 </p>
 
-<p align="center"><b>"By picking Yes, the application starts over</b>
+<p align="center"><b>By picking Yes, the application starts over</b>
 <br>
 <img src= "images/listAgain.png">
 </p>
 
-<p align="center"><b>"By picking No, the application ends.</b>
+<p align="center"><b>By picking No, the application ends.</b>
 <br>
 <img src= "images/ExitLast.png">
 </p>

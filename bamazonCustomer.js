@@ -41,7 +41,7 @@ function askUser() {
         choices: ["Buy", "Exit"]
     }).then(function(answer){
         if(answer.firstQuest === "Exit") {
-            console.log("Good-Bye.");
+            console.log("\nGood-Bye.");
             connection.end();
         }
         else{
@@ -75,7 +75,7 @@ function toBuy() {
             var query = "SELECT product_name FROM products WHERE item_id ="+ chosenProd;
             connection.query(query, function(err, res){
                 if (err) throw err;
-                console.log("You picked: " + res[0].product_name);
+                console.log("\nYou picked: " + res[0].product_name);
             });
             chosenQuan= parseInt(answer.buyHowMany);
             var queryCheck= "SELECT stock_quantity FROM products WHERE item_id=" + chosenProd;
@@ -91,7 +91,7 @@ function toBuy() {
                     updateProd();
                 }
                 else{
-                    console.log("Sorry we do not have enough.")
+                    console.log("\nSorry we do not have enough.")
                     startOver();
                 }
             });
@@ -123,7 +123,7 @@ function totalCost() {
         var total = res[0].price*chosenQuan;
         var formatTotal= number_format(total, 2);
         if (err)throw err;
-        console.log("Your total is " + formatTotal + ".");
+        console.log("\nYour total is " + formatTotal + "." + "\n" + "-------------");
         startOver();
     })
 };
@@ -141,7 +141,7 @@ function startOver() {
     inquirer.prompt({
         name: "start",
         type: "list",
-        message: "Would you like to look at our items again?",
+        message: "\nWould you like to look at our items again?",
         choices:["Yes", "No"]
     }).then(function(answer){
         if(answer.start === "Yes") {
@@ -149,7 +149,7 @@ function startOver() {
             displayItems();
         }
         else{
-            console.log("Thank you. Good-Bye!")
+            console.log("\nThank you. Good-Bye!")
             connection.end();
         }
     })
