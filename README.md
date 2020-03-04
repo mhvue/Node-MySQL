@@ -7,22 +7,22 @@ This like a Amazon-like application. Users will get the option to pick what item
 3. Always start with "node" and input bamazonCustomer.js.
 4. Press Enter.
 
-5.<p align="center">"We see "connected as id" message. This confirms we are connect to MySQL. The first question ask to Buy or Exit"
+5. <p align="center">We see "connected as id" message. This confirms we are connect to MySQL. The first question ask to Buy or Exit.
 <br>
 <img src= "images/start_app.png">
 </p>
 
-6.<p align="center">"If User chooses Exit, the application ends."
+6. <p align="center">If User chooses Exit, the application ends.
 <br>
 <img src= "images/ExitFirst.png">
 </p>
 
-7. <p align="center">"If user choses Buy, the application display items to buy. There are a total of 10 items on this application, but this image is only listing 6."
+7. <p align="center">If user choses Buy, the application display items to buy. There are a total of 10 items on this application, but this image is only listing 6.
 <br>
 <img src= "images/Buy.png">
 </p>
 
-8. <p align="center">"User needs to input ID number of item as instructed. Once done so, the application will then ask to input quantity."
+8. <p align="center">User needs to input ID number of item as instructed. Once done so, the application will then ask to input quantity.
 <br>
 <img src= "images/Id.quantity.png">
 </p>
