@@ -1,17 +1,13 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
+require("dotenv").config();
+var key = require("./keys");
 
 var chosenQuan;
 var chosenProd;
 var newStock;
 
-var connection = mysql.createConnection({
-    host: "127.0.0.1",
-    port: 3307,
-    user: "root",
-    password:"124Cloud",
-    database: "bamazon"
-});
+var connection = mysql.createConnection(key);
 
 connection.connect(function(err) {
     if (err) throw err;
